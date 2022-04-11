@@ -18,10 +18,10 @@ class handler(BaseHTTPRequestHandler):
     message2 += 'here a list of recommended books tp learn Python'
     books_path = 'text_file/books.txt'
     with open (books_path , 'r') as books:
-        books.read()
+        text = books.read()
     
 
-    self.wfile.write(books)
+    
     self.send_response(200)
 
     self.send_header('Content-type', 'text/plain')
@@ -29,6 +29,7 @@ class handler(BaseHTTPRequestHandler):
     
     self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
     self.wfile.write(message.encode())
+    self.wfile.write(text.encode())
     return
 
 
