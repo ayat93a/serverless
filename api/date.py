@@ -12,7 +12,6 @@ class handler(BaseHTTPRequestHandler):
     query_string_list = parse.parse_qsl(url_components.query)
     dic = dict(query_string_list)
     
-
     message = f'\n Greetings from python version {platform.python_version()}'
     message2 = f'\n here a list of recommended books tp learn Python'
     books_path = '.../text_file/books.txt'
