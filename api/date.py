@@ -27,8 +27,8 @@ class handler(BaseHTTPRequestHandler):
 
     self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
     self.wfile.write(message.encode())
-    self.wfile.write(message2.encode())
-    self.wfile.write(content)
+    # self.wfile.write(message2.encode())
+    # self.wfile.write(content)
     return
 
 
