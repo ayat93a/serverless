@@ -21,7 +21,7 @@ class handler(BaseHTTPRequestHandler):
 
 
     message = f'\n Greetings from python version {platform.python_version()}'
-    greeting = open('/home/ayat/serverless/Images/greeting.jpg', 'rb').read()
+    greeting = open('../Images/greeting.jpg', 'rb').read()
 
     self.wfile.write(greeting)
     self.send_response(200)
