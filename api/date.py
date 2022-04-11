@@ -15,13 +15,11 @@ class handler(BaseHTTPRequestHandler):
     
 
     message = f'\n Greetings from python version {platform.python_version()}'
-    message2 += 'here a list of recommended books tp learn Python'
+    message2 = f'\n here a list of recommended books tp learn Python'
     books_path = 'text_file/books.txt'
     with open (books_path , 'r') as books:
         text = books.read()
-    
-
-    
+            
     self.send_response(200)
 
     self.send_header('Content-type', 'text/plain')
@@ -29,7 +27,8 @@ class handler(BaseHTTPRequestHandler):
     
     self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
     self.wfile.write(message.encode())
-    # self.wfile.write(text.encode())
+    self.wfile.write(message2.encode())
+    self.wfile.write(text.encode())
     return
 
 
