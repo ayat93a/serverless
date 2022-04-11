@@ -12,18 +12,15 @@ class handler(BaseHTTPRequestHandler):
     url_components =parse.urlsplit(path)
     query_string_list = parse.parse_qsl(url_components.query)
     dic = dict(query_string_list)
-    name = dic.get('name')
-
-    if name :
-        message = f'\naloha{name}'
-    else :
-        message = '\naloha stranger'
-
+    
 
     message = f'\n Greetings from python version {platform.python_version()}'
-    # greeting = open('../Images/greeting.jpg', 'rb').read()
+    message2 += 'here a list of recommended books tp learn Python'
+    with open ('books.txt' , 'r') as books:
+        books.read()
+    
 
-    # self.wfile.write(greeting)
+    self.wfile.write(books)
     self.send_response(200)
 
     self.send_header('Content-type', 'text/plain')
