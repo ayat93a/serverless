@@ -16,7 +16,8 @@ class handler(BaseHTTPRequestHandler):
 
     message = f'\n Greetings from python version {platform.python_version()}'
     message2 += 'here a list of recommended books tp learn Python'
-    with open ('books.txt' , 'r') as books:
+    books_path = 'text_file/books.txt'
+    with open (books_path , 'r') as books:
         books.read()
     
 
