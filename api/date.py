@@ -15,9 +15,9 @@ class handler(BaseHTTPRequestHandler):
     name = dic.get('name')
 
     if name :
-        message = f'aloha{name}'
+        message = f'\naloha{name}'
     else :
-        message = 'aloha stranger'
+        message = '\naloha stranger'
 
     message += f'\n Greetings from python version {platform.python_version()}'
     self.send_response(200)
