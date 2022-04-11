@@ -29,7 +29,7 @@ class handler(BaseHTTPRequestHandler):
     
     self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
     self.wfile.write(message.encode())
-    self.wfile.write(text.encode())
+    # self.wfile.write(text.encode())
     return
 
 
