@@ -19,7 +19,9 @@ class handler(BaseHTTPRequestHandler):
     else :
         message = '\naloha stranger'
 
-    message += f'\n Greetings from python version {platform.python_version()}'
+
+    message = f'\n Greetings from python version {platform.python_version()}'
+    # message += f
     self.send_response(200)
     self.send_header('Content-type', 'text/plain')
     self.end_headers()
