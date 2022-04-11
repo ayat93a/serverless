@@ -7,7 +7,6 @@ import platform
 class handler(BaseHTTPRequestHandler):
 
   def do_GET(self):
-    #  request is successful and you will get your response
     path = self.path
     url_components =parse.urlsplit(path)
     query_string_list = parse.parse_qsl(url_components.query)
@@ -19,7 +18,9 @@ class handler(BaseHTTPRequestHandler):
     books_path = '.../text_file/books.txt'
     with open (books_path , 'r') as books:
         text = books.read()
-        
+        # while text:
+        #     text = books.readline()
+        #     self.wfile.write(text.encode())
             
     self.send_response(200)
 
@@ -32,12 +33,6 @@ class handler(BaseHTTPRequestHandler):
     self.wfile.write(text.encode())
     return
 
-
-""""
-- if the request is correct and there are no problems: 2XX
-- if the request is not correct or there is something wrong from client side: 4XX 404 403
-- if the req/res are not correct or something wrong happened from server: 5XX 500
-"""
 
 
 # if __name__ == '__main__':
