@@ -26,9 +26,7 @@ class handler(BaseHTTPRequestHandler):
     self.wfile.write(str(datetime.now().strftime('%Y-%m-%d %H:%M:%S')).encode())
     self.wfile.write(message.encode())
     self.wfile.write(message2.encode())
-    books_path = 'text_file/books.txt'
-    content = open(books_path, 'r').read()
-    self.wfile.write(content)
+   
     return
 
 
